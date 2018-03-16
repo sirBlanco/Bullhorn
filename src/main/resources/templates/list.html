@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>What's everyone saying</title>
+</head>
+<body>
+    <a href="/add">What are you thinking about?Post it here</a>
+
+    <h1>What everyone is saying</h1>
+
+    <div th:each="message : ${message}">
+        <h3 th:text="${message.content}"></h3>
+        <a th:href="@{/detail/{id}(id=${message.id})}">Details</a>
+    </div>
+
+</body>
+</html>

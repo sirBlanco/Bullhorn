@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Fake Twitter</title>
+</head>
+    <body>
+
+    <form action="#" th:action="@{/process}" th:object="${message}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        Sent by :<input type="text" th:field="*{sentby}" />
+        <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span><br />
+
+        Today Date :<input type="text" th:field="*{posteddate}" />
+        <span th:if="${#fields.hasErrors('posteddate')}" th:errors="*{posteddate}"></span><br />
+
+        Content :<textarea rows="3" th:field="*{content}" />
+        <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br />
+
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+    </body>
+</html>
