@@ -5,9 +5,8 @@
     <title>What's everyone saying</title>
 </head>
 <body>
-    <a href="/add">What are you thinking about?Post it here</a>
-
-    <h1>What everyone is saying</h1>
+    <h1>What are you thinking about?</h1>
+    <a href="/add">Post it here</a>
 
     <div th:each="message : ${message}">
         <h3 th:text="${message.content}"></h3>
